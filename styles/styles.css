@@ -30,7 +30,7 @@ html, body {
 .texte:hover {
     color: rgb(150, 150, 150) !important;
     border-color: rgb(107, 0, 109);
-    box-shadow: 0 -5px 20px rgb(0, 1, 10), 0 0 10px rgb(106, 0, 255);
+    box-shadow: 0 -5px 20px rgb(106, 0, 255), 0 0 10px rgb(106, 0, 255);
     cursor: pointer;
 }
 
@@ -48,8 +48,8 @@ html, body {
 
 .texte_act:hover{
     background-color: rgb(15, 0, 40) !important;
-    box-shadow: 0 -5px 20px rgb(50, 0, 155), 0 0 10px rgb(106, 0, 255);
-    color: rgb(59, 59, 59);
+    box-shadow: 0 -5px 20px rgb(106, 0, 255), 0 0 10px rgb(106, 0, 255);
+    color: rgb(50, 50, 50);
 }
 
 .contenu{
