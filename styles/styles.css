@@ -49,7 +49,7 @@ html, body {
 .texte_act:hover{
     background-color: rgb(15, 0, 40) !important;
     box-shadow: 0 -5px 20px rgb(40, 0, 96), 0 0 10px rgb(106, 0, 255);
-    color: rgb(50, 50, 50);
+    color: rgb(100, 100, 100);
 }
 
 .contenu{
