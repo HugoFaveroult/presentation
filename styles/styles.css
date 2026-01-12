@@ -16,12 +16,12 @@ body {
 }
 
 .navbar {
-    background-color: transparent !important;
     width: 100%;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(6px);
 
     /**
  * La dernière valeur (0.2) est le canal alpha (opacité)
@@ -30,28 +30,28 @@ body {
  * 1 = complètement opaque
  * 0.2 = 20% d'opacité (80% de transparence)
  */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
 
 #nav-sentinel {
-  position: absolute;
-  top: 100vh;      /* après le hero */
-  height: 1px;
-  width: 100%;
+    position: absolute;
+    top: 100vh;
+    /* après le hero */
+    height: 1px;
+    width: 100%;
 }
 
-nav.solid {
+.navbar.solid {
     background: #ffffff;
     backdrop-filter: blur(0);
 }
 
-nav.scrolled {
+.navbar.scrolled {
     padding: 12px 40px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: rgb(255, 255, 255);
 }
 
 .navbar-nav .nav-link {
@@ -67,8 +67,6 @@ nav.scrolled {
 
 .navbar-nav .nav-link:hover {
     color: rgb(150, 150, 150) !important;
-    border-color: rgb(100, 100, 100);
-    box-shadow: 0 0px 20px rgb(50, 50, 50), 0 0 10px rgb(150, 150, 150);
     cursor: pointer;
 }
 
@@ -76,19 +74,16 @@ nav.scrolled {
 .navbar-nav .nav-link.active {
     background-color: transparent !important;
     color: rgb(100, 100, 100) !important;
-    border: solid 2px;
-    border-color: rgb(100, 100, 100);
-    border-radius: 50px;
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
     font-size: large;
     padding: 8px 16px;
     transition: all 0.5s ease;
+    text-decoration: underline;
 }
 
 .navbar-nav .nav-link.active:hover {
-    box-shadow: 0 0px 10px rgb(50, 50, 50), 0 0 10px rgb(150, 150, 150);
-    color: rgb(75, 75, 75);
+    color: rgb(97, 97, 97) !important;
 }
 
 .contenu {
@@ -229,4 +224,9 @@ caption {
     background-image: url("../images/background5.png");
     background-position: center center;
     background-size: cover;
+}
+
+.ecole {
+    color: black !important;
+    font-weight: bold;
 }
