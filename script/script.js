@@ -65,3 +65,17 @@ window.addEventListener("scroll", () => {
     nav.classList.remove("scrolled");
   }
 });
+
+const sentinel = document.querySelector("#nav-sentinel");
+
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    nav.classList.toggle("solid", !entry.isIntersecting);
+  },
+  {
+    root: null,
+    threshold: 0
+  }
+);
+
+observer.observe(sentinel);

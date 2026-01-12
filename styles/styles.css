@@ -16,18 +16,34 @@ body {
 }
 
 .navbar {
-    background-color: rgb(0, 1, 10) !important;
-    box-shadow: 0 -5px 20px rgb(0, 1, 10), 0 0 10px rgb(106, 0, 255);
+    background-color: transparent !important;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(6px);
 
-    transition:
-        padding 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+    /**
+ * La dernière valeur (0.2) est le canal alpha (opacité)
+ * Elle définit le niveau de transparence de la couleur de fond blanc
+ * 0 = complètement transparent
+ * 1 = complètement opaque
+ * 0.2 = 20% d'opacité (80% de transparence)
+ */
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+#nav-sentinel {
+  position: absolute;
+  top: 100vh;      /* après le hero */
+  height: 1px;
+  width: 100%;
+}
+
+nav.solid {
+    background: #ffffff;
+    backdrop-filter: blur(0);
 }
 
 nav.scrolled {
@@ -37,7 +53,7 @@ nav.scrolled {
 }
 
 .texte {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
     font-size: large;
@@ -49,15 +65,17 @@ nav.scrolled {
 
 .texte:hover {
     color: rgb(150, 150, 150) !important;
-    border-color: rgb(107, 0, 109);
-    box-shadow: 0 -5px 20px rgb(40, 0, 96), 0 0 10px rgb(106, 0, 255);
+    border-color: rgb(100, 100, 100);
+    box-shadow: 0 0px 20px rgb(50, 50, 50), 0 0 10px rgb(150, 150, 150);
     cursor: pointer;
 }
 
 
 .texte_act {
-    background-color: rgb(27, 0, 59) !important;
-    color: rgb(150, 150, 150);
+    background-color: transparent !important;
+    color: rgb(100, 100, 100) !important;
+    border: solid 2px;
+    border-color: rgb(100, 100, 100);
     border-radius: 50px;
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
@@ -67,15 +85,14 @@ nav.scrolled {
 }
 
 .texte_act:hover {
-    background-color: rgb(15, 0, 40) !important;
-    box-shadow: 0 -5px 20px rgb(40, 0, 96), 0 0 10px rgb(106, 0, 255);
-    color: rgb(100, 100, 100);
+    box-shadow: 0 0px 10px rgb(50, 50, 50), 0 0 10px rgb(150, 150, 150);
+    color: rgb(75, 75, 75);
 }
 
 .contenu {
     padding-left: 100px;
     padding-right: 100px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
     font-size: large;
@@ -95,7 +112,7 @@ nav.scrolled {
     color: rgb(0, 0, 0);
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0.5em;
 }
 
 .portrait {
@@ -130,7 +147,7 @@ a {
 }
 
 .copyright {
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: Arial, Narrow, sans-serif;
     font-weight: 300;
     font-size: medium;
@@ -145,13 +162,13 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgb(0, 1, 10);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
     position: static;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -5px 20px rgb(0, 1, 10), 0 0 10px rgb(106, 0, 255);
+    box-shadow: 0 0px 20px rgb(50, 50, 50), 0 0 10px rgb(150, 150, 150);
     text-align: center;
     z-index: 100;
 }
@@ -209,8 +226,9 @@ caption {
 }
 
 #index {
-    color:black;
-    background-image: url("../images/background.png");
+    border-top: 0;
+    color: black;
+    background-image: url("../images/background5.png");
     background-position: center center;
     background-size: cover;
 }
