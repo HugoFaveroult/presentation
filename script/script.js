@@ -24,3 +24,44 @@ function showYear() {
 }
 
 showYear();
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Toutes les sections avec un id
+  const sections = document.querySelectorAll("section[id]");
+
+  // Tous les liens de la navbar
+  const navLinks = document.querySelectorAll("nav a");
+
+  const observerOptions = {
+    root: null,              // viewport
+    threshold: 0.6           // % visible pour activer la section
+    // rootMargin: "-80px 0px -40% 0px" // décommente si navbar fixe
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const currentId = entry.target.id;
+
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${currentId}`
+        );
+      });
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+});
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});

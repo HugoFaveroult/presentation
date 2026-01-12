@@ -1,23 +1,39 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
     display: none;
 }
 
-.navbar{
+.navbar {
     background-color: rgb(0, 1, 10) !important;
     box-shadow: 0 -5px 20px rgb(0, 1, 10), 0 0 10px rgb(106, 0, 255);
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+
+    transition:
+        padding 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    padding: 12px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .texte {
@@ -39,53 +55,54 @@ html, body {
 }
 
 
-.texte_act{
+.texte_act {
     background-color: rgb(27, 0, 59) !important;
-    color:rgb(150, 150, 150);
+    color: rgb(150, 150, 150);
     border-radius: 50px;
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
-    font-size:large;
+    font-size: large;
     padding: 8px 16px;
-    transition:all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
-.texte_act:hover{
+.texte_act:hover {
     background-color: rgb(15, 0, 40) !important;
     box-shadow: 0 -5px 20px rgb(40, 0, 96), 0 0 10px rgb(106, 0, 255);
     color: rgb(100, 100, 100);
 }
 
-.contenu{
+.contenu {
     padding-left: 100px;
     padding-right: 100px;
     color: white;
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
-    font-size:large;
+    font-size: large;
+    text-align: justify;
 }
 
-.sous_titre{
-    margin-left:45px;
-    color: white;
+.sous_titre {
+    margin-left: 45px;
+    color: rgb(0, 0, 0);
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
     font-size: larger;
 }
 
-.titre{
-    margin-left:30px;
-    color: white;
+.titre {
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.portrait{
+.portrait {
     margin-right: 20px;
 }
 
-body{
+body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -94,17 +111,17 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0; 
+    margin: 0;
     width: 100%;
     overflow-x: hidden;
     padding: 0;
 }
 
-a{
+a {
     color: white;
 }
 
-#horloge{
+#horloge {
     text-align: center;
     font-family: Arial, Narrow, sans-serif;
     font-weight: 300;
@@ -112,17 +129,17 @@ a{
     margin-right: 25px;
 }
 
-.copyright{
+.copyright {
     color: white;
     font-family: Arial, Narrow, sans-serif;
-    font-weight:300;
-    font-size:medium;
+    font-weight: 300;
+    font-size: medium;
     margin-left: 25px;
 }
 
 footer {
     padding-bottom: 0;
-    margin-top:auto;
+    margin-top: auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -131,7 +148,7 @@ footer {
     background-color: rgb(0, 1, 10);
     color: white;
     font-family: Arial, sans-serif;
-    position:static;
+    position: static;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -5px 20px rgb(0, 1, 10), 0 0 10px rgb(106, 0, 255);
@@ -139,33 +156,34 @@ footer {
     z-index: 100;
 }
 
-.projet{
+.projet {
     text-align: center;
     color: white;
     font-family: Arial, Narrow, sans-serif;
-    font-weight:300;
-    font-size:medium;
+    font-weight: 300;
+    font-size: medium;
     margin-left: 0;
 }
 
-.lien{
+.lien {
     text-align: center;
     color: white;
     font-family: Arial, Narrow, sans-serif;
-    font-weight:300;
+    font-weight: 300;
     font-size: 8px;
     margin-left: 0;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 table {
@@ -175,14 +193,24 @@ table {
     font-size: 0.8rem;
     margin: 16px auto;
 }
-th, td {
+
+th,
+td {
     border: 1px solid rgb(255, 255, 255) !important;
     padding: 8px 12px;
     text-align: left;
 }
+
 caption {
     caption-side: top;
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 8px;
+}
+
+#index {
+    color:black;
+    background-image: url("../images/background.png");
+    background-position: center center;
+    background-size: cover;
 }
