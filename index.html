@@ -13,25 +13,25 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg ">
     <div class="container-fluid">
       <a class="navbar-brand">
         <img src="images/Panda.png" alt="Bootstrap" width="50" height="50" class="d-inline-block align-text-top">
       </a>
-      <a class="navbar-brand texte_act" href="index.html">Hugo Faveroult</a>
-      <a class="navbar-brand texte" href="#presentation">Présentation</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link js-scroll-trigger " href="#index">Hugo Faveroult</a>
+          <a class="nav-link js-scroll-trigger " href="#presentation">Présentation</a>
+          <a class="nav-link js-scroll-trigger " aria-current="page" href="parcours.html">Parcours</a>
+          <a class="nav-link js-scroll-trigger " aria-current="page" href="passions.html">Passions</a>
+          <a class="nav-link js-scroll-trigger " aria-current="page" href="projets.html">Projets</a>
+          <a class="nav-link js-scroll-trigger " aria-current="page" href="contact.html">Contacts</a>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="navbar-brand texte" aria-current="page" href="parcours.html">Parcours</a>
-          <a class="navbar-brand texte" aria-current="page" href="passions.html">Passions</a>
-          <a class="navbar-brand texte" aria-current="page" href="projets.html">Projets</a>
-          <a class="navbar-brand texte" aria-current="page" href="contact.html">Contacts</a>
-        </div>
-      </div>
     </div>
   </nav>
   <div id="nav-sentinel"></div>
