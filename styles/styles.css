@@ -5,6 +5,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -129,7 +130,7 @@ body {
 }
 
 a {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #horloge {
@@ -156,7 +157,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(225, 225, 225);
     color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
     position: static;
@@ -198,7 +199,7 @@ body {
 
 table {
     border-collapse: collapse !important;
-    border: 2px solid rgb(255, 255, 255) !important;
+    border: 2px solid rgb(0, 0, 0) !important;
     font-family: sans-serif;
     font-size: 0.8rem;
     margin: 16px auto;
@@ -206,9 +207,10 @@ table {
 
 th,
 td {
-    border: 1px solid rgb(255, 255, 255) !important;
+    border: 1px solid rgb(0, 0, 0) !important;
     padding: 8px 12px;
     text-align: left;
+    color: rgb(0, 0, 0)
 }
 
 caption {
@@ -226,7 +228,37 @@ caption {
     background-size: cover;
 }
 
-.ecole {
-    color: black !important;
-    font-weight: bold;
+#parcours{
+    background-color: rgb(210,210,210);
+}
+
+#passions{
+    background-color: rgb(230,230,230);
+}
+
+#projets{
+    background-color: rgb(220,220,220);
+}
+
+.scolaire{
+    border-right: solid 2px rgb(0, 0, 0);
+}
+
+.contact{
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.contact_container{
+    border-left: solid 1px rgb(0, 0, 0);
+    border-right: solid 1px rgb(0, 0, 0);
+}
+
+.parcours_container{
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+}
+
+section {
+  scroll-margin-top: 80px; /* hauteur de ta navbar */
 }

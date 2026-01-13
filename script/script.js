@@ -1,74 +1,77 @@
-function refresh(){
-    let t = 1000;
-    setTimeout('showDate()',t)
+/* =======================
+   HORLOGE
+======================= */
+function refresh() {
+  setTimeout(showDate, 1000);
 }
-         
+
 function showDate() {
-    let date = new Date()
-    let h = date.getHours();
-    let m = date.getMinutes();
-    let s = date.getSeconds();
-    if( h < 10 ){ h = '0' + h; }
-    if( m < 10 ){ m = '0' + m; }
-    if( s < 10 ){ s = '0' + s; }
-    let time = h + ':' + m + ':' + s
-    document.getElementById('horloge').innerHTML = time;
-    refresh();
+  const date = new Date();
+  let h = date.getHours();
+  let m = date.getMinutes();
+  let s = date.getSeconds() + 1; 
+
+  if (h < 10) h = "0" + h;
+  if (m < 10) m = "0" + m;
+  if (s < 10) s = "0" + s;
+
+  document.getElementById("horloge").textContent = `${h}:${m}:${s}`;
+  refresh();
 }
 showDate();
 
 function showYear() {
-  const date = new Date();
-  const year = date.getFullYear();
-  document.getElementById("annee").textContent = year;
+  document.getElementById("annee").textContent = new Date().getFullYear();
 }
-
 showYear();
 
+/* =======================
+   NAV ACTIVE (SECTIONS)
+======================= */
 document.addEventListener("DOMContentLoaded", () => {
-  // Toutes les sections avec un id
   const sections = document.querySelectorAll("section[id]");
-
-  // Tous les liens de la navbar
   const navLinks = document.querySelectorAll("nav a");
 
-  const observerOptions = {
-    root: null,              // viewport
-    threshold: 0.6           // % visible pour activer la section
-    // rootMargin: "-80px 0px -40% 0px" // décommente si navbar fixe
-  };
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+        const id = entry.target.id;
 
-      const currentId = entry.target.id;
-
-      navLinks.forEach(link => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === `#${currentId}`
-        );
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${id}`
+          );
+        });
       });
-    });
-  }, observerOptions);
+    },
+    {
+      root: null,
+      rootMargin: "-80px 0px -70% 0px", // ← LA CLÉ
+      threshold: 0
+    }
+  );
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach(section => sectionObserver.observe(section));
 });
 
+/* =======================
+   NAV SCROLL (PADDING)
+======================= */
 const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
+  nav.classList.toggle("scrolled", window.scrollY > 50);
 });
 
+/* =======================
+   NAV SOLIDE (SENTINEL)
+======================= */
 const sentinel = document.querySelector("#nav-sentinel");
 
-const observer = new IntersectionObserver(
+const navObserver = new IntersectionObserver(
   ([entry]) => {
     nav.classList.toggle("solid", !entry.isIntersecting);
   },
@@ -78,4 +81,4 @@ const observer = new IntersectionObserver(
   }
 );
 
-observer.observe(sentinel);
+navObserver.observe(sentinel);
