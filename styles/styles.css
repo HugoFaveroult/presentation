@@ -23,7 +23,7 @@ body {
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(6px);
-    border-bottom: solid 1px rgb(200,200,200);
+    border-bottom: solid 1px rgb(200, 200, 200);
 
     /**
  * La dernière valeur (0.2) est le canal alpha (opacité)
@@ -95,6 +95,7 @@ body {
     font-family: Arial, Narrow, sans-serif;
     font-weight: bold;
     font-size: large;
+    /*font-size:3vh;*/
     text-align: justify;
 }
 
@@ -229,37 +230,38 @@ caption {
     background-size: cover;
 }
 
-#parcours{
-    background-color: rgb(210,210,210);
+#parcours {
+    background-color: rgb(210, 210, 210);
 }
 
-#passions{
-    background-color: rgb(230,230,230);
+#passions {
+    background-color: rgb(230, 230, 230);
 }
 
-#projets{
-    background-color: rgb(220,220,220);
+#projets {
+    background-color: rgb(220, 220, 220);
 }
 
-.scolaire{
+.scolaire {
     border-right: solid 2px rgb(0, 0, 0);
 }
 
-.contact{
+.contact {
     font-size: 15px;
     text-decoration: none;
 }
 
-.contact_container{
+.contact_container {
     border-left: solid 1px rgb(0, 0, 0);
     border-right: solid 1px rgb(0, 0, 0);
 }
 
-.parcours_container{
+.parcours_container {
     margin-top: 30vh;
     margin-bottom: 30vh;
 }
 
 section {
-  scroll-margin-top: 80px; /* hauteur de ta navbar */
+    scroll-margin-top: 80px; /* hauteur de ta navbar */
+    min-height: 100vh;
 }
