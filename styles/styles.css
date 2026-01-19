@@ -269,6 +269,10 @@ section {
     background-color: rgb(0, 0, 0);
 }
 
+.carousel-control-color{
+    color: rgb(0, 0, 0);
+}
+
 .carousel-caption-color{
     background-color: rgb(50,50,50);
 }
