@@ -23,7 +23,7 @@ body {
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(6px);
-    border-bottom: solid 1px rgb(200, 200, 200);
+    border-bottom: solid 1px rgb(95, 95, 95);
 
     /**
  * La dernière valeur (0.2) est le canal alpha (opacité)
@@ -159,6 +159,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    border-top: solid 1px rgb(95,95,95);
     background-color: rgb(225, 225, 225);
     color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
